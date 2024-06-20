@@ -120,26 +120,3 @@ if (a.equals(b)) {
 }
 ```
 
-### Aufgaben
-
-#### Aufgabe 1: Variablen und Datentypen
-
-Deklariere und initialisiere Variablen für folgende Informationen: deinen Namen (String), dein Alter (int), deine Körpergröße in Metern (double) und ob du ein Programmierer bist (boolean). Gib diese Informationen auf der Konsole aus.
-
-#### Aufgabe 2: If, if-else
-
-Schreibe ein Programm, das eine Zahl von der Konsole liest und überprüft, ob diese Zahl gerade oder ungerade ist. Gib das Ergebnis auf der Konsole aus.
-
-#### Aufgabe 3: Switch-case
-
-Erweitere das Programm aus Aufgabe 2. Wenn die Zahl zwischen 1 und 7 liegt, gib den entsprechenden Wochentag aus (1 = Montag, 2 = Dienstag, ...). Für andere Zahlen gib "Ungültiger Tag" aus.
-
-#### Aufgabe 4: Scanner
-
-Schreibe ein Programm, das den Benutzer nach seinem Namen und Alter fragt und dann eine Begrüßung ausgibt, die den Namen und das Alter enthält.
-
-#### Aufgabe 5: Vergleich mit `==` und `equals`
-
-Schreibe ein Programm, das zwei Strings von der Konsole liest und überprüft, ob sie den gleichen Inhalt haben. Verwende dazu sowohl `==` als auch `equals` und erkläre den Unterschied in einem Kommentar.
-
-Viel Spaß beim Programmieren!
