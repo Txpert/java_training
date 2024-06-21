@@ -1,6 +1,31 @@
 import java.util.Scanner;
 
 public class Schaltjahr {
+ // Methode zur Überprüfung, ob ein Jahr ein Schaltjahr ist
+ public static boolean istSchaltjahr(int jahr) {
+    if (jahr % 4 == 0) {
+        if (jahr % 100 == 0) {
+            if (jahr % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
+
+public static void findeSchaltjahreImBereich(int start, int ende) {
+    for (int jahr = start; jahr <= ende; jahr++) { 
+        if (istSchaltjahr(jahr)) {
+            System.out.println(jahr);
+        }
+    }
+}
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -24,30 +49,5 @@ public class Schaltjahr {
 
         scanner.close();
     }
-
-    // Methode zur Überprüfung, ob ein Jahr ein Schaltjahr ist
-    public static boolean istSchaltjahr(int jahr) {
-        if (jahr % 4 == 0) {
-            if (jahr % 100 == 0) {
-                if (jahr % 400 == 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    // Methode zur Berechnung der Schaltjahre in einem Bereich
-    public static void findeSchaltjahreImBereich(int start, int ende) {
-        for (int jahr = start; jahr <= ende; jahr++) { 
-            if (istSchaltjahr(jahr)) {
-                System.out.println(jahr);
-            }
-        }
-    }
+  
 }
