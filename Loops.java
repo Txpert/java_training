@@ -60,7 +60,7 @@ public class Loops {
                 System.out.println("Day: " + j);
            }
 
-              ++i;
+              ++z;
         }
     }
 
