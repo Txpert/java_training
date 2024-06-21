@@ -93,3 +93,44 @@ for (int i = 0; i < zahlen.length; i++) {
 }
 ```
 
+#### `for-each` Schleife
+
+Die `for-each`-Schleife in Java, auch bekannt als erweiterte `for`-Schleife, wird verwendet, um durch Elemente eines Arrays oder einer Sammlung zu iterieren. Sie ist besonders nützlich, weil sie den Code lesbarer und weniger fehleranfällig macht, da sie sich automatisch um die Indizierung kümmert.
+
+Hier ist die allgemeine Syntax der `for-each`-Schleife:
+
+```java
+for (ElementTyp element : arrayOrCollection) {
+    // Anweisungen, die mit 'element' ausgeführt werden sollen
+}
+```
+
+### Beispiel mit einem Array:
+
+```java
+public class ForEachExample {
+    public static void main(String[] args) {
+        // Ein Array von Strings
+        String[] names = {"Max", "Anna", "Peter", "Laura"};
+
+        // Verwendung der for-each-Schleife zum Durchlaufen des Arrays
+        for (String name : names) {
+            System.out.println("Hallo " + name + "!");
+        }
+    }
+}
+```
+
+
+### Vorteile der for-each-Schleife:
+
+1. **Lesbarkeit**: Die Schleife ist einfacher und klarer zu lesen.
+2. **Fehlervermeidung**: Es gibt keine Gefahr von Indexfehlern.
+3. **Einfachheit**: Kein Bedarf an Initialisierung und Inkrementierung von Indexvariablen.
+
+### Einschränkungen:
+
+1. **Nur lesen**: Sie können die Elemente des Arrays oder der Sammlung nicht direkt ändern. Wenn Sie Änderungen vornehmen müssen, verwenden Sie eine normale `for`-Schleife mit Indizes.
+2. **Keine Indizes**: Wenn Sie die Indizes der Elemente benötigen, ist die normale `for`-Schleife besser geeignet.
+
+Die `for-each`-Schleife ist ein nützliches Werkzeug, um Arrays und Sammlungen auf eine einfache und effiziente Weise zu durchlaufen.
