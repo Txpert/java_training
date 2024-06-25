@@ -1,4 +1,3 @@
-![[Sichtbarkeit.png]]
 ## Konzept der Objektorientierung
 
 - Erlaubt uns das Bündeln von zusammengehörigen Attributen und Methoden
