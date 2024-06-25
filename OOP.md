@@ -49,7 +49,7 @@ public class Main {
 
 ## Der Konstruktor
 
-###Zusammenfassung
+### Zusammenfassung
 
 - Konstruktor konstruiert das Objekt
 - Konstruktor deklariert alle Attribute auf dem vom `new`-Operator reservierten Speicherbereich
@@ -58,8 +58,6 @@ public class Main {
 - Konstruktor hat immer den gleichen Bezeichner wie die Klasse selbst
 - Konstruktor hat keinen Rückgabewert (Wichtig: das Schlüsselwort `void` muss nicht angegeben werden)
 - Über Konstruktor kann man Attribute direkt mit einem gewünschten Wert vorbelegen
-
-
 
 Ein Konstruktor ist eine spezielle Methode, die verwendet wird, um Objekte zu initialisieren. Der Konstruktor wird aufgerufen, wenn eine Instanz einer Klasse erstellt wird. Konstruktoren haben den gleichen Namen wie die Klasse und haben keinen Rückgabewert, nicht einmal `void`.
 
@@ -194,7 +192,6 @@ Konstruktoren sind nützlich, um Objekte beim Erstellen mit sinnvollen Startwert
 - Das Wort `null` bedeutet „nichts“ (es ist also noch kein Objekt darin enthalten)
 
 
-
 ## Die Sichtbarkeitsmodifizierer `public` und `private`
 
 - Man sollte nur über Methoden auf die Attribute eines Objekts zugreifen können
@@ -291,7 +288,7 @@ public class Main {
 ```
 
 
-### Statische Klassen-Variablen (Felder)
+### Statische Klassen-Variablen (static)
 
 1. **Definition**: Eine statische Variable, auch Klassenvariable genannt, wird mit dem Schlüsselwort `static` deklariert. Sie gehört der Klasse selbst und nicht einzelnen Instanzen der Klasse. Es gibt nur eine Kopie dieser Variable, die von allen Instanzen der Klasse geteilt wird.
    ```java
@@ -360,21 +357,18 @@ public class Main {
    }
    ```
 
-### Zusammenfassung
-
 - **Statische Klassen-Variablen**:
-  - Werden mit `static` deklariert.
   - Gehören der Klasse und nicht den Instanzen.
   - Es gibt nur eine Kopie, die von allen Instanzen geteilt wird.
   - Zugriff erfolgt über den Klassennamen.
 
 - **Statische Methoden**:
-  - Werden mit `static` deklariert.
   - Können ohne Erstellung einer Instanz aufgerufen werden.
   - Können nicht auf Instanzvariablen oder Instanzmethoden zugreifen.
   - Zugriff erfolgt über den Klassennamen.
 
 Statische Variablen und Methoden sind nützlich für das Verwalten von Daten und Funktionen, die von allen Instanzen einer Klasse geteilt werden sollen. Sie helfen, Speicherplatz zu sparen und ermöglichen den einfachen Zugriff auf gemeinsame Ressourcen.
+
 ### Vererbung
 
 **Vererbung** ist ein grundlegendes Konzept der objektorientierten Programmierung (OOP), das es einer Klasse ermöglicht, die Eigenschaften (Felder) und Verhaltensweisen (Methoden) einer anderen Klasse zu übernehmen. Die Klasse, die vererbt, wird als **Basisklasse** oder **Superklasse** bezeichnet, und die Klasse, die erbt, wird als **abgeleitete Klasse** oder **Unterklasse** bezeichnet. 
