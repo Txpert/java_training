@@ -436,60 +436,63 @@ Angenommen, Sie entwickeln eine Bibliothekssystemanwendung, bei der verschiedene
 
 ```java
 class Medium {
-    String titel;
-    String autor;
+    protected String title;
+    protected String author;
     
-    public void anzeigen() {
-        System.out.println("Titel: " + titel + ", Autor: " + autor);
+    public void display() {
+        System.out.println("Title: " + title + ", Author: " + author);
     }
 }
 
-class Buch extends Medium {
-    int seitenanzahl;
+class Book extends Medium {
+    protected int pageCount;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Seitenanzahl: " + seitenanzahl);
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Page Count: " + pageCount);
     }
 }
 
-class Zeitschrift extends Medium {
-    int ausgabe;
+class Magazine extends Medium {
+    protected int issue;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Ausgabe: " + ausgabe);
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Issue: " + issue);
     }
 }
 
 class DVD extends Medium {
-    int spieldauer;
+    protected int duration;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Spieldauer: " + spieldauer + " Minuten");
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Duration: " + duration + " minutes");
     }
 }
 
-public class Bibliothek {
+public class Library {
     public static void main(String[] args) {
-        Buch buch = new Buch();
-        buch.titel = "Java Programmierung";
-        buch.autor = "John Doe";
-        buch.seitenanzahl = 450;
-        buch.anzeigen();
+        Book book = new Book();
+        book.title = "Java Programming";
+        book.author = "John Doe";
+        book.pageCount = 450;
+        book.display();
         
-        Zeitschrift zeitschrift = new Zeitschrift();
-        zeitschrift.titel = "Tech Weekly";
-        zeitschrift.autor = "Jane Smith";
-        zeitschrift.ausgabe = 24;
-        zeitschrift.anzeigen();
+        Magazine magazine = new Magazine();
+        magazine.title = "Tech Weekly";
+        magazine.author = "Jane Smith";
+        magazine.issue = 24;
+        magazine.display();
         
         DVD dvd = new DVD();
-        dvd.titel = "Inception";
-        dvd.autor = "Christopher Nolan";
-        dvd.spieldauer = 148;
-        dvd.anzeigen();
+        dvd.title = "Inception";
+        dvd.author = "Christopher Nolan";
+        dvd.duration = 148;
+        dvd.display();
     }
 }
 ```
