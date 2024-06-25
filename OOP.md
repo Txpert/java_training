@@ -46,12 +46,6 @@ public class Main {
 }
 ```
 
-## Methoden in Klassen
-
-- Bisher besteht die Klasse `Car` nur aus Attributen
-- Dadurch sind alle Objekte, die man von der Klasse `Car` erstellt, sehr statisch
-- Damit Klassen auch Funktionalitäten besitzen, muss man Methoden implementieren
-- Alle Funktionen eines Autos werden also innerhalb dieser Klasse `Car` mithilfe von Methoden modelliert
 
 ## Der Konstruktor
 
