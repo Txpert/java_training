@@ -436,16 +436,56 @@ Angenommen, Sie entwickeln eine Bibliothekssystemanwendung, bei der verschiedene
 
 ```java
 class Medium {
-    protected String title;
-    protected String author;
+    private String title;
+    private String author;
     
+    // Constructor
+    public Medium(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    // Public getter methods
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    // Public setter methods
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    // Public method to display information
     public void display() {
         System.out.println("Title: " + title + ", Author: " + author);
     }
 }
 
 class Book extends Medium {
-    protected int pageCount;
+    private int pageCount;
+
+    // Constructor
+    public Book(String title, String author, int pageCount) {
+        super(title, author);
+        this.pageCount = pageCount;
+    }
+
+    // Public getter and setter for pageCount
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
 
     @Override
     public void display() {
@@ -455,7 +495,22 @@ class Book extends Medium {
 }
 
 class Magazine extends Medium {
-    protected int issue;
+    private int issue;
+
+    // Constructor
+    public Magazine(String title, String author, int issue) {
+        super(title, author);
+        this.issue = issue;
+    }
+
+    // Public getter and setter for issue
+    public int getIssue() {
+        return issue;
+    }
+
+    public void setIssue(int issue) {
+        this.issue = issue;
+    }
 
     @Override
     public void display() {
@@ -465,7 +520,22 @@ class Magazine extends Medium {
 }
 
 class DVD extends Medium {
-    protected int duration;
+    private int duration;
+
+    // Constructor
+    public DVD(String title, String author, int duration) {
+        super(title, author);
+        this.duration = duration;
+    }
+
+    // Public getter and setter for duration
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 
     @Override
     public void display() {
@@ -476,22 +546,13 @@ class DVD extends Medium {
 
 public class Library {
     public static void main(String[] args) {
-        Book book = new Book();
-        book.title = "Java Programming";
-        book.author = "John Doe";
-        book.pageCount = 450;
+        Book book = new Book("Java Programming", "John Doe", 450);
         book.display();
         
-        Magazine magazine = new Magazine();
-        magazine.title = "Tech Weekly";
-        magazine.author = "Jane Smith";
-        magazine.issue = 24;
+        Magazine magazine = new Magazine("Tech Weekly", "Jane Smith", 24);
         magazine.display();
         
-        DVD dvd = new DVD();
-        dvd.title = "Inception";
-        dvd.author = "Christopher Nolan";
-        dvd.duration = 148;
+        DVD dvd = new DVD("Inception", "Christopher Nolan", 148);
         dvd.display();
     }
 }
