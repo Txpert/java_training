@@ -430,7 +430,7 @@ Statische Variablen und Methoden sind nützlich für das Verwalten von Daten und
 
 
 
-### Praktisches Beispiel
+### Praktisches Beispiel (Best Practice)
 
 Angenommen, Sie entwickeln eine Bibliothekssystemanwendung, bei der verschiedene Arten von Medien wie Bücher, Zeitschriften und DVDs verwaltet werden. Sie können eine Superklasse `Medium` erstellen und spezifische Klassen wie `Buch`, `Zeitschrift` und `DVD` ableiten.
 
