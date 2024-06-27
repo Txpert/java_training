@@ -1,4 +1,3 @@
-![[Sichtbarkeit.png]]
 ## Konzept der Objektorientierung
 
 - Erlaubt uns das Bündeln von zusammengehörigen Attributen und Methoden
@@ -47,16 +46,10 @@ public class Main {
 }
 ```
 
-## Methoden in Klassen
-
-- Bisher besteht die Klasse `Car` nur aus Attributen
-- Dadurch sind alle Objekte, die man von der Klasse `Car` erstellt, sehr statisch
-- Damit Klassen auch Funktionalitäten besitzen, muss man Methoden implementieren
-- Alle Funktionen eines Autos werden also innerhalb dieser Klasse `Car` mithilfe von Methoden modelliert
 
 ## Der Konstruktor
 
-###Zusammenfassung
+### Zusammenfassung
 
 - Konstruktor konstruiert das Objekt
 - Konstruktor deklariert alle Attribute auf dem vom `new`-Operator reservierten Speicherbereich
@@ -65,8 +58,6 @@ public class Main {
 - Konstruktor hat immer den gleichen Bezeichner wie die Klasse selbst
 - Konstruktor hat keinen Rückgabewert (Wichtig: das Schlüsselwort `void` muss nicht angegeben werden)
 - Über Konstruktor kann man Attribute direkt mit einem gewünschten Wert vorbelegen
-
-
 
 Ein Konstruktor ist eine spezielle Methode, die verwendet wird, um Objekte zu initialisieren. Der Konstruktor wird aufgerufen, wenn eine Instanz einer Klasse erstellt wird. Konstruktoren haben den gleichen Namen wie die Klasse und haben keinen Rückgabewert, nicht einmal `void`.
 
@@ -201,7 +192,6 @@ Konstruktoren sind nützlich, um Objekte beim Erstellen mit sinnvollen Startwert
 - Das Wort `null` bedeutet „nichts“ (es ist also noch kein Objekt darin enthalten)
 
 
-
 ## Die Sichtbarkeitsmodifizierer `public` und `private`
 
 - Man sollte nur über Methoden auf die Attribute eines Objekts zugreifen können
@@ -298,7 +288,7 @@ public class Main {
 ```
 
 
-### Statische Klassen-Variablen (Felder)
+### Statische Klassen-Variablen (static)
 
 1. **Definition**: Eine statische Variable, auch Klassenvariable genannt, wird mit dem Schlüsselwort `static` deklariert. Sie gehört der Klasse selbst und nicht einzelnen Instanzen der Klasse. Es gibt nur eine Kopie dieser Variable, die von allen Instanzen der Klasse geteilt wird.
    ```java
@@ -367,21 +357,18 @@ public class Main {
    }
    ```
 
-### Zusammenfassung
-
 - **Statische Klassen-Variablen**:
-  - Werden mit `static` deklariert.
   - Gehören der Klasse und nicht den Instanzen.
   - Es gibt nur eine Kopie, die von allen Instanzen geteilt wird.
   - Zugriff erfolgt über den Klassennamen.
 
 - **Statische Methoden**:
-  - Werden mit `static` deklariert.
   - Können ohne Erstellung einer Instanz aufgerufen werden.
   - Können nicht auf Instanzvariablen oder Instanzmethoden zugreifen.
   - Zugriff erfolgt über den Klassennamen.
 
 Statische Variablen und Methoden sind nützlich für das Verwalten von Daten und Funktionen, die von allen Instanzen einer Klasse geteilt werden sollen. Sie helfen, Speicherplatz zu sparen und ermöglichen den einfachen Zugriff auf gemeinsame Ressourcen.
+
 ### Vererbung
 
 **Vererbung** ist ein grundlegendes Konzept der objektorientierten Programmierung (OOP), das es einer Klasse ermöglicht, die Eigenschaften (Felder) und Verhaltensweisen (Methoden) einer anderen Klasse zu übernehmen. Die Klasse, die vererbt, wird als **Basisklasse** oder **Superklasse** bezeichnet, und die Klasse, die erbt, wird als **abgeleitete Klasse** oder **Unterklasse** bezeichnet. 
@@ -443,66 +430,130 @@ Statische Variablen und Methoden sind nützlich für das Verwalten von Daten und
 
 
 
-### Praktisches Beispiel
+### Praktisches Beispiel (Best Practice)
 
 Angenommen, Sie entwickeln eine Bibliothekssystemanwendung, bei der verschiedene Arten von Medien wie Bücher, Zeitschriften und DVDs verwaltet werden. Sie können eine Superklasse `Medium` erstellen und spezifische Klassen wie `Buch`, `Zeitschrift` und `DVD` ableiten.
 
 ```java
 class Medium {
-    String titel;
-    String autor;
+    private String title;
+    private String author;
     
-    public void anzeigen() {
-        System.out.println("Titel: " + titel + ", Autor: " + autor);
+    // Constructor
+    public Medium(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    // Public getter methods
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    // Public setter methods
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    // Public method to display information
+    public void display() {
+        System.out.println("Title: " + title + ", Author: " + author);
     }
 }
 
-class Buch extends Medium {
-    int seitenanzahl;
+class Book extends Medium {
+    private int pageCount;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Seitenanzahl: " + seitenanzahl);
+    // Constructor
+    public Book(String title, String author, int pageCount) {
+        super(title, author);
+        this.pageCount = pageCount;
+    }
+
+    // Public getter and setter for pageCount
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Page Count: " + pageCount);
     }
 }
 
-class Zeitschrift extends Medium {
-    int ausgabe;
+class Magazine extends Medium {
+    private int issue;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Ausgabe: " + ausgabe);
+    // Constructor
+    public Magazine(String title, String author, int issue) {
+        super(title, author);
+        this.issue = issue;
+    }
+
+    // Public getter and setter for issue
+    public int getIssue() {
+        return issue;
+    }
+
+    public void setIssue(int issue) {
+        this.issue = issue;
+    }
+
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Issue: " + issue);
     }
 }
 
 class DVD extends Medium {
-    int spieldauer;
+    private int duration;
 
-    public void anzeigen() {
-        super.anzeigen();
-        System.out.println("Spieldauer: " + spieldauer + " Minuten");
+    // Constructor
+    public DVD(String title, String author, int duration) {
+        super(title, author);
+        this.duration = duration;
+    }
+
+    // Public getter and setter for duration
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Duration: " + duration + " minutes");
     }
 }
 
-public class Bibliothek {
+public class Library {
     public static void main(String[] args) {
-        Buch buch = new Buch();
-        buch.titel = "Java Programmierung";
-        buch.autor = "John Doe";
-        buch.seitenanzahl = 450;
-        buch.anzeigen();
+        Book book = new Book("Java Programming", "John Doe", 450);
+        book.display();
         
-        Zeitschrift zeitschrift = new Zeitschrift();
-        zeitschrift.titel = "Tech Weekly";
-        zeitschrift.autor = "Jane Smith";
-        zeitschrift.ausgabe = 24;
-        zeitschrift.anzeigen();
+        Magazine magazine = new Magazine("Tech Weekly", "Jane Smith", 24);
+        magazine.display();
         
-        DVD dvd = new DVD();
-        dvd.titel = "Inception";
-        dvd.autor = "Christopher Nolan";
-        dvd.spieldauer = 148;
-        dvd.anzeigen();
+        DVD dvd = new DVD("Inception", "Christopher Nolan", 148);
+        dvd.display();
     }
 }
 ```
